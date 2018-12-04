@@ -54,18 +54,18 @@
 
     <!-- Fling -->
     <string name="fling_settings">Fling settings</string>
-    <string name="fling_settings_summary">A unique and fully-customizable gesture-based navigation bar</string>
+    <string name="fling_settings_summary">A unique and fully customizable gesture-based navigation bar</string>
     <string name="fling_interface">Fling</string>
     <string name="fling_enable_title">Enable Fling</string>
-    <string name="fling_back_home_policy">Back and Home must always be set. To change Back or Home assignments, set the desired assignment first.\n\nEnabling double-tap actions produces slight delay to single-tap responsiveness.</string>
-    <string name="fling_split_bar_policy">Setting actions to only right/left will split touch areas amoungst entire bar.</string>
+    <string name="fling_back_home_policy">Back and Home must always be set. To change Back or Home assignments, set the desired assignment first.\n\nEnabling double-tap actions produces a slight delay with single-tap responsiveness.</string>
+    <string name="fling_split_bar_policy">Setting actions to only right/left will split touch areas amongst entire bar.</string>
     <string name="fling_def_summary">No action set</string>
     <string name="fling_swipe_actions">Swipe gestures</string>
     <string name="fling_tap_actions">Tap gestures</string>
-    <string name="fling_short_swipe_right">Right short-swipe</string>
-    <string name="fling_short_swipe_left">Left short-swipe</string>
-    <string name="fling_long_swipe_right">Right long-swipe</string>
-    <string name="fling_long_swipe_left">Left long-swipe</string>
+    <string name="fling_short_swipe_right">Short-swipe right</string>
+    <string name="fling_short_swipe_left">Short-swipe left</string>
+    <string name="fling_long_swipe_right">Long-swipe right</string>
+    <string name="fling_long_swipe_left">Long-swipe left</string>
     <string name="fling_right_up_swipe">Swipe-up right</string>
     <string name="fling_left_up_swipe">Swipe-up left</string>
     <string name="fling_single_tap">Single-tap right</string>
@@ -108,7 +108,7 @@
     <string name="fling_longpress_title">Long-press delay</string>
     <string name="fling_longpress_summary">Adjust the time threshold for executing long-press actions</string>
     <string name="fling_keyboard_cursors_title">Dynamic keyboard cursors action</string>
-    <string name="fling_keyboard_cursors_summary">Double-tap left/right actions become left/right keyboard cursor actions when keyboard is open</string>
+    <string name="fling_keyboard_cursors_summary">Double-tap left/right actions become left/right keyboard cursor actions when keyboard is visible</string>
     <string name="fling_logo_opacity_title">Fling logo opacity</string>
     <string name="fling_factory_reset_title">Reset to stock</string>
     <string name="fling_factory_reset_confirm">Are you sure you want to reset Fling to stock settings?</string>
