@@ -15,6 +15,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- SmartNav -->
+    <string name="smartnav_title">SmartNav</string>
     <string name="bottom_nav_navigation_title">Navigation</string>
     <string name="navbar_interface_title">Interface</string>
     <string name="navbar_size">Bar size</string>
