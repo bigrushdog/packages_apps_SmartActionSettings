@@ -21,7 +21,9 @@ package com.android.settings.smartnav;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.om.IOverlayManager;
+import android.content.om.OverlayInfo;
 import android.graphics.drawable.Drawable;
+import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -33,7 +35,7 @@ import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-//import com.android.internal.statusbar.ThemeAccentUtils;
+import com.android.internal.statusbar.ThemeAccentUtils;
 import com.android.internal.utils.ActionHandler;
 import com.android.internal.utils.Config.ActionConfig;
 import com.android.settings.R;
@@ -46,19 +48,26 @@ public class CustomActionListAdapter extends BaseAdapter {
     private Context mContext;
     private List<ActionConfigs> mCustomActions = new ArrayList<ActionConfigs>();
 
-    private IOverlayManager mOverlayManager;
-    private int mCurrentUserId;
-
     private boolean mIsUsingWhiteAccent;
 
     public CustomActionListAdapter(Context context) {
         mContext = context;
         mInflater = LayoutInflater.from(context);
-        mOverlayManager = IOverlayManager.Stub.asInterface(
-                ServiceManager.getService(Context.OVERLAY_SERVICE));
-        mCurrentUserId = ActivityManager.getCurrentUser();
-//        mIsUsingWhiteAccent = ThemeAccentUtils.isUsingWhiteAccent(mOverlayManager, mCurrentUserId);
+        mIsUsingWhiteAccent = isUsingWhiteAccent();
         reloadActions();
+    }
+
+    private static boolean isUsingWhiteAccent() {
+        IOverlayManager om = IOverlayManager.Stub.asInterface(
+                ServiceManager.getService(Context.OVERLAY_SERVICE));
+        OverlayInfo themeInfo = null;
+        try {
+            themeInfo = om.getOverlayInfo("com.accents.white",
+                    ActivityManager.getCurrentUser());
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        return themeInfo != null && themeInfo.isEnabled();
     }
 
     private void reloadActions() {
