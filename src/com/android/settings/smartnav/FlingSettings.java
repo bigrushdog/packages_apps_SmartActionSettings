@@ -364,6 +364,13 @@ public class FlingSettings extends ActionFragment implements
         }
     }
 
+    @Override
+    protected ArrayList<String> getActionBlackListForPreference(String key) {
+        ArrayList<String> blacklist = new ArrayList<String>();
+        blacklist.add(ActionHandler.SYSTEMUI_TASK_EDITING_SMARTBAR);
+        return blacklist;
+    }
+
     private void resetFling() {
         restoreConfig(getActivity(), getDefaultConfig(getActivity()));
         loadAndSetConfigs();
