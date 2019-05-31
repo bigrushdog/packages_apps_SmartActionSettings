@@ -92,6 +92,7 @@ public class PulseSettings extends SettingsPreferenceFragment implements
         mRenderMode = (ListPreference) findPreference("pulse_render_mode");
         mRenderMode.setValue(String.valueOf(renderMode));
         mRenderMode.setOnPreferenceChangeListener(this);
+        updateRenderModeSummary(renderMode);
 
         mAutoColor = (SwitchPreference) findPreference("pulse_auto_color");
         mAutoColor.setChecked(Settings.Secure.getIntForUser(getContentResolver(),
@@ -198,6 +199,7 @@ public class PulseSettings extends SettingsPreferenceFragment implements
             fadingBarsCat.setEnabled(mode == RENDER_STYLE_FADING_BARS);
             PreferenceCategory solidBarsCat = (PreferenceCategory)findPreference("pulse_2");
             solidBarsCat.setEnabled(mode == RENDER_STYLE_SOLID_LINES);
+            updateRenderModeSummary(mode);
             return true;
         } else if (preference.equals(mShowPulse)) {
             boolean enabled = ((Boolean) newValue).booleanValue();
@@ -279,6 +281,14 @@ public class PulseSettings extends SettingsPreferenceFragment implements
             return true;
         }
         return false;
+    }
+
+    private void updateRenderModeSummary(int value) {
+        if (value == 0) {
+            mRenderMode.setSummary(getResources().getString(R.string.pulse_render_mode_fading_bars));
+        } else {
+            mRenderMode.setSummary(getResources().getString(R.string.pulse_render_mode_solid_lines));
+        }
     }
 
     @Override
