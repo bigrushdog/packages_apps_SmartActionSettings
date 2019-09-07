@@ -24,6 +24,55 @@
         android:title="@string/navbar_visibility" />
 
     <PreferenceCategory
+        android:key="category_gesture_interface"
+        android:title="@string/gesture_interface_title" >
+
+        <com.aquarios.support.preferences.SystemSettingSwitchPreference
+            android:key="use_bottom_gesture_navigation"
+            android:title="@string/use_bottom_gesture_title"
+            android:summary="@string/use_bottom_gesture_summary"
+            android:defaultValue="false" />
+
+       <com.aquarios.support.preferences.CustomSeekBarPreference
+            android:key="gesture_swipe_length"
+            android:title="@string/gesture_swipe_length_title"
+            android:summary="@string/gesture_swipe_length_summary"
+            android:persistent="false"
+            settings:units="px"
+            android:dependency="use_bottom_gesture_navigation" />
+
+        <com.aquarios.support.preferences.CustomSeekBarPreference
+            android:key="gesture_swipe_start"
+            android:title="@string/gesture_swipe_start_title"
+            android:summary="@string/gesture_swipe_start_summary"
+            android:max="50"
+            settings:min="20"
+            android:persistent="false"
+            settings:units="px"
+            android:dependency="use_bottom_gesture_navigation" />
+
+        <com.aquarios.support.preferences.CustomSeekBarPreference
+            android:key="gesture_swipe_timeout"
+            android:title="@string/gesture_action_timeout_title"
+            android:summary="@string/gesture_action_timeout_summary"
+            android:max="500"
+            settings:min="100"
+            android:persistent="false"
+            settings:units="ms"
+            android:dependency="use_bottom_gesture_navigation" />
+
+        <com.aquarios.support.preferences.SystemSettingListPreference
+            android:key="bottom_gesture_navigation_feedback_duration"
+            android:entries="@array/bottom_gestures_feedback_time_labels"
+            android:entryValues="@array/bottom_gestures_feedback_time"
+            android:title="@string/bottom_gestures_feedback_duration_title"
+            android:summary="%s"
+            android:defaultValue="50"
+            android:dependency="use_bottom_gesture_navigation" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="category_navbar_interface"
         android:title="@string/navbar_interface_title" >
 
