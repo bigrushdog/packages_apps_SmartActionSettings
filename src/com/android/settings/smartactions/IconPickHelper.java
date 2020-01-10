@@ -17,11 +17,11 @@
  * Wrapper class for delivering icon picker results to activities or fragments
  */
 
-package com.android.settings.smartnav;
+package com.android.settings.smartactions;
 
 import java.io.File;
 
-import com.android.internal.utils.ImageHelper;
+import com.android.internal.smartutils.ImageHelper;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -32,7 +32,7 @@ import android.os.Environment;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.android.internal.utils.ActionUtils;
+import com.android.internal.smartutils.ActionUtils;
 import com.android.settings.R;
 
 public class IconPickHelper {

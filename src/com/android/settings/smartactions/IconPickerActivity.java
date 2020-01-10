@@ -16,7 +16,7 @@
  * Display installed icons packs that we are able to parse and get an icon from
  */
 
-package com.android.settings.smartnav;
+package com.android.settings.smartactions;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -26,8 +26,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import com.android.internal.utils.ActionHandler;
-import com.android.internal.utils.ActionUtils;
+import com.android.internal.smartutils.ActionHandler;
+import com.android.internal.smartutils.ActionUtils;
 import com.android.settings.R;
 
 import android.app.Activity;
@@ -127,7 +127,7 @@ public class IconPickerActivity extends Activity implements DialogInterface.OnCa
     private void sendCancelResultAndFinish() {
         Intent intent = new Intent(ActionUtils.INTENT_ICON_PICKER);
         intent.putExtra(ActionUtils.INTENT_EXTRA_RESULT, Activity.RESULT_CANCELED);
-        ActionHandler.dispatchNavigationEditorResult(intent);
+//        ActionHandler.dispatchNavigationEditorResult(intent);
         setResult(Activity.RESULT_CANCELED);
         finish();
     }
@@ -145,7 +145,7 @@ public class IconPickerActivity extends Activity implements DialogInterface.OnCa
                 resultIntent.putExtra(ActionUtils.INTENT_EXTRA_ICON_DATA_TYPE, iconType);
                 resultIntent.putExtra(ActionUtils.INTENT_EXTRA_ICON_DATA_PACKAGE, iconPackage);
                 resultIntent.putExtra(ActionUtils.INTENT_EXTRA_ICON_DATA_NAME, iconName);
-                ActionHandler.dispatchNavigationEditorResult(resultIntent);
+//                ActionHandler.dispatchNavigationEditorResult(resultIntent);
                 setResult(RESULT_OK, resultIntent);
                 finish();
             } else {

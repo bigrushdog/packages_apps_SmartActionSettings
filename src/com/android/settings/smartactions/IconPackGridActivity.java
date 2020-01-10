@@ -16,7 +16,7 @@
  * GridView displaying all the available icons in a Icon pack.
  */
 
-package com.android.settings.smartnav;
+package com.android.settings.smartactions;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -33,7 +33,7 @@ import java.util.Set;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
 
-import com.android.internal.utils.ActionUtils;
+import com.android.internal.smartutils.ActionUtils;
 import com.android.settings.R;
 
 import android.app.Activity;

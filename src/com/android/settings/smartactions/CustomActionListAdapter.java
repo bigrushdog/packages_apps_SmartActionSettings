@@ -16,7 +16,7 @@
  * Adapter for displaying custom actions in a list
  */
 
-package com.android.settings.smartnav;
+package com.android.settings.smartactions;
 
 import android.app.ActivityManager;
 import android.content.Context;
@@ -35,9 +35,9 @@ import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.android.internal.statusbar.ThemeAccentUtils;
-import com.android.internal.utils.ActionHandler;
-import com.android.internal.utils.Config.ActionConfig;
+//import com.android.internal.statusbar.ThemeAccentUtils;
+import com.android.internal.smartutils.ActionHandler;
+import com.android.internal.smartutils.Config.ActionConfig;
 import com.android.settings.R;
 
 import java.util.ArrayList;

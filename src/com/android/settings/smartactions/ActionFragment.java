@@ -17,35 +17,35 @@
  * class that holds target widget state
  */
 
-package com.android.settings.smartnav;
+package com.android.settings.smartactions;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 import com.android.internal.logging.nano.MetricsProto;
-import com.android.internal.utils.ActionConstants.Defaults;
-import com.android.internal.utils.ActionHandler;
-import com.android.internal.utils.Config;
-import com.android.internal.utils.Config.ActionConfig;
-import com.android.internal.utils.Config.ButtonConfig;
+import com.android.internal.smartutils.ActionConstants.Defaults;
+import com.android.internal.smartutils.ActionHandler;
+import com.android.internal.smartutils.Config;
+import com.android.internal.smartutils.Config.ActionConfig;
+import com.android.internal.smartutils.Config.ButtonConfig;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.preference.Preference;
-import android.support.v7.preference.PreferenceCategory;
-import android.support.v7.preference.PreferenceScreen;
+import androidx.preference.PreferenceCategory;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceScreen;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.smartnav.ActionPreference;
-import com.android.settings.smartnav.CustomActionListAdapter;
-import com.android.settings.smartnav.ShortcutPickHelper;
-import com.android.settings.smartnav.ShortcutPickHelper.OnPickListener;
+import com.android.settings.smartactions.ActionPreference;
+import com.android.settings.smartactions.CustomActionListAdapter;
+import com.android.settings.smartactions.ShortcutPickHelper;
+import com.android.settings.smartactions.ShortcutPickHelper.OnPickListener;
 
 public class ActionFragment extends SettingsPreferenceFragment implements
         ShortcutPickHelper.OnPickListener {

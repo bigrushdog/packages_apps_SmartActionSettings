@@ -15,13 +15,13 @@
  *
  */
 
-package com.android.settings.smartnav;
+package com.android.settings.smartactions;
 
 import java.io.File;
 
-import com.android.internal.utils.ActionHandler;
-import com.android.internal.utils.ActionUtils;
-import com.android.internal.utils.ImageHelper;
+import com.android.internal.smartutils.ActionHandler;
+import com.android.internal.smartutils.ActionUtils;
+import com.android.internal.smartutils.ImageHelper;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -75,7 +75,7 @@ public class IconPickerGallery extends Activity {
                             resultIntent.setAction(ActionUtils.INTENT_GALLERY_PICKER);
                             resultIntent.putExtra(ActionUtils.INTENT_EXTRA_RESULT, Activity.RESULT_OK);
                             resultIntent.putExtra(ActionUtils.INTENT_EXTRA_URI, newUri.toString());
-                            ActionHandler.dispatchNavigationEditorResult(resultIntent);
+//                            ActionHandler.dispatchNavigationEditorResult(resultIntent);
                             setResult(RESULT_OK, resultIntent);
                             finish();
                         }
@@ -103,7 +103,7 @@ public class IconPickerGallery extends Activity {
     private void sendCancelResultAndFinish() {
         Intent intent = new Intent(ActionUtils.INTENT_GALLERY_PICKER);
         intent.putExtra(ActionUtils.INTENT_EXTRA_RESULT, Activity.RESULT_CANCELED);
-        ActionHandler.dispatchNavigationEditorResult(intent);
+//        ActionHandler.dispatchNavigationEditorResult(intent);
         setResult(Activity.RESULT_CANCELED);
         finish();
     }

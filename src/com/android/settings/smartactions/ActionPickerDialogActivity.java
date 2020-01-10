@@ -17,14 +17,14 @@
  * ActionHandler framework
  */
 
-package com.android.settings.smartnav;
+package com.android.settings.smartactions;
 
-import com.android.internal.utils.ActionHandler;
-import com.android.internal.utils.ActionUtils;
-import com.android.internal.utils.Config.ActionConfig;
+import com.android.internal.smartutils.ActionHandler;
+import com.android.internal.smartutils.ActionUtils;
+import com.android.internal.smartutils.Config.ActionConfig;
 import com.android.settings.R;
-import com.android.settings.smartnav.CustomActionListAdapter;
-import com.android.settings.smartnav.ShortcutPickHelper;
+import com.android.settings.smartactions.CustomActionListAdapter;
+import com.android.settings.smartactions.ShortcutPickHelper;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -130,7 +130,7 @@ public class ActionPickerDialogActivity extends Activity implements
         intent.putExtra(ActionUtils.INTENT_EXTRA_ACTION_STRING, result);
         ActionConfig actionConfig = new ActionConfig(this, result);
         intent.putExtra(ActionUtils.INTENT_EXTRA_ACTION_CONFIG, actionConfig);
-        ActionHandler.dispatchNavigationEditorResult(intent);
+//        ActionHandler.dispatchNavigationEditorResult(intent);
         setResult(Activity.RESULT_OK, intent);
         finish();
     }
@@ -138,7 +138,7 @@ public class ActionPickerDialogActivity extends Activity implements
     private void sendCancelResultAndFinish() {
         Intent intent = new Intent(ActionUtils.INTENT_ACTION_ACTION_PICKER);
         intent.putExtra(ActionUtils.INTENT_EXTRA_RESULT, Activity.RESULT_CANCELED);
-        ActionHandler.dispatchNavigationEditorResult(intent);
+//        ActionHandler.dispatchNavigationEditorResult(intent);
         setResult(Activity.RESULT_CANCELED);
         finish();
     }

@@ -18,18 +18,18 @@
  * key is identical to the target ConfigMap tag in ActionConstants 
  */
 
-package com.android.settings.smartnav;
+package com.android.settings.smartactions;
 
 import java.util.Map;
 
-import com.android.internal.utils.ActionConstants.ConfigMap;
-import com.android.internal.utils.ActionConstants.Defaults;
-import com.android.internal.utils.ActionHolder;
-import com.android.internal.utils.Config.ActionConfig;
-import com.android.internal.utils.Config.ButtonConfig;
+import com.android.internal.smartutils.ActionConstants.ConfigMap;
+import com.android.internal.smartutils.ActionConstants.Defaults;
+import com.android.internal.smartutils.ActionHolder;
+import com.android.internal.smartutils.Config.ActionConfig;
+import com.android.internal.smartutils.Config.ButtonConfig;
 
 import android.content.Context;
-import android.support.v7.preference.Preference;
+import androidx.preference.Preference;
 import android.util.AttributeSet;
 
 public class ActionPreference extends Preference implements ActionHolder {
